@@ -1,0 +1,357 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7f5;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #198754;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* Main */
+
+main {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #198754;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #265b43;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Cards */
+
+.card {
+    background-color: white;
+    border: 1px solid #e0e6e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Recipe reserve */
+
+.badge {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 10px;
+    border-radius: 6px;
+}
+
+/* Planning cards */
+
+.menu-jour {
+    border-top: 4px solid #198754;
+}
+
+.menu-jour h3 {
+    color: #198754;
+    border-bottom: 1px solid #e0e6e0;
+    padding-bottom: 12px;
+}
+
+/* Dropdown labels */
+
+.form-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Dropdown menus */
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    color: #333;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-select:hover {
+    border-color: #198754;
+}
+
+.form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.15);
+    outline: none;
+}
+
+/* Daily totals */
+
+.menu-jour .fw-bold {
+    font-size: 17px;
+    color: #265b43;
+    margin-top: 15px;
+}
+
+.total-jour {
+    color: #198754;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Daily budget  */
+
+.statut-budget {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.statut-budget.text-success {
+    color: #198754 !important;
+}
+
+.statut-budget.text-danger {
+    color: #dc3545 !important;
+}
+
+.statut-budget.text-muted {
+    color: #6c757d !important;
+}
+
+/* Budget info */
+
+.alert-info {
+    background-color: #e8f5ee;
+    color: #17633e;
+    border: 1px solid #b6dfca;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+/* Weekly summary */
+
+section.mt-5 .card {
+    background-color: #f0faf4;
+    border: 2px solid #198754 !important;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+section.mt-5 .card:hover {
+    transform: none;
+}
+
+section.mt-5 h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+section.mt-5 h3 {
+    font-size: 22px;
+    color: #265b43;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+#total-semaine {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #198754;
+    margin-left: 5px;
+}
+
+#statut-semaine {
+    font-size: 15px;
+    color: #58665d;
+    margin-top: 12px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    main {
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .total-jour {
+        font-size: 18px;
+    }
+
+    section.mt-5 .card {
+        padding: 18px;
+    }
+
+    section.mt-5 h2 {
+        font-size: 22px;
+    }
+
+    section.mt-5 h3 {
+        font-size: 18px;
+    }
+
+    #total-semaine {
+        font-size: 25px;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-select {
+        font-size: 14px;
+    }
+
+    #total-semaine {
+        font-size: 28px;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    main {
+        padding-top: 30px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .form-select {
+        font-size: 15px;
+    }
+
+    #total-semaine {
+        font-size: 32px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card {
+        transition: none;
+    }
+}
