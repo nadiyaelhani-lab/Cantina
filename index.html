@@ -1,34 +1,291 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8 ">
-    <meta name="viewport" content="width=device-with, initial-scale=1.0">
-    <title>Cantina - Youcode</title>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Miam Miam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cantina - Youcode</h1>
-    <p> Gestion de la menu de la cantine</p>
+
+<header class="bg-success text-white text-center p-4">
+    <h1>Cantina - Miam Miam</h1>
+    <p>Gestion du menu de la cantine</p>
+</header>
+
+<main class="container my-5">
+
+    <section class="mb-5">
+        <h2>Réserve de recettes</h2>
+        <p>Découvrez les recettes disponibles pour composer vos menu: </p>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <h3>Entrées</h3>
+                    <p>Velouté de légumes <span class="badge bg-success">5 DH</span></p>
+                    <p>Salade marocaine <span class="badge bg-success">7 DH</span></p>
+                    <p>Soupe de légumes <span class="badge bg-success">6 DH</span></p>
+                    <p>Salade de carottes <span class="badge bg-success">5 DH</span></p>
+                    <p>Salade de tomates <span class="badge bg-success">6 DH</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <h3>Plats principaux</h3>
+                    <p>Tajine de poulet <span class="badge bg-success">25 DH</span></p>
+                    <p>Couscous aux légumes <span class="badge bg-success">20 DH</span></p>
+                    <p>Riz au poulet <span class="badge bg-success">22 DH</span></p>
+                    <p>Pâtes aux légumes <span class="badge bg-success">18 DH</span></p>
+                    <p>Tajine de kefta <span class="badge bg-success">28 DH</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 h-100">
+                    <h3>Desserts</h3>
+                    <p>Fruit de saison <span class="badge bg-success">5 DH</span></p>
+                    <p>Yaourt <span class="badge bg-success">4 DH</span></p>
+                    <p>Salade de fruits <span class="badge bg-success">8 DH</span></p>
+                    <p>Flan maison <span class="badge bg-success">7 DH</span></p>
+                    <p>Compote de pommes <span class="badge bg-success">6 DH</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Planning des menus</h2>
+        <p class="alert alert-info">
+            Budget maximum : 50 DH par jour
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-3 h-100 menu-jour" data-jour="lundi">
+                    <h3>Lundi</h3>
+
+                    <label for="lundi-entree" class="form-label">Entrée :</label>
+                    <select id="lundi-entree" class="form-select mb-3 entree">
+                        <option value="">Choisir une entrée</option>
+                        <option value="5">Velouté de légumes - 5 DH</option>
+                        <option value="7">Salade marocaine - 7 DH</option>
+                        <option value="6">Soupe de légumes - 6 DH</option>
+                        <option value="5">Salade de carottes - 5 DH</option>
+                        <option value="6">Salade de tomates - 6 DH</option>
+                    </select>
+
+                    <label for="lundi-plat" class="form-label">Plat principal :</label>
+                    <select id="lundi-plat" class="form-select mb-3 plat">
+                        <option value="">Choisir un plat</option>
+                        <option value="25">Tajine de poulet - 25 DH</option>
+                        <option value="20">Couscous aux légumes - 20 DH</option>
+                        <option value="22">Riz au poulet - 22 DH</option>
+                        <option value="18">Pâtes aux légumes - 18 DH</option>
+                        <option value="28">Tajine de kefta - 28 DH</option>
+                    </select>
+
+                    <label for="lundi-dessert" class="form-label">Dessert :</label>
+                    <select id="lundi-dessert" class="form-select mb-3 dessert">
+                        <option value="">Choisir un dessert</option>
+                        <option value="5">Fruit de saison - 5 DH</option>
+                        <option value="4">Yaourt - 4 DH</option>
+                        <option value="8">Salade de fruits - 8 DH</option>
+                        <option value="7">Flan maison - 7 DH</option>
+                        <option value="6">Compote de pommes - 6 DH</option>
+                    </select>
+
+                    <p class="fw-bold">Total lundi : <span class="total-jour">0</span> DH</p>
+                    <p class="statut-budget"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-3 h-100 menu-jour" data-jour="mardi">
+                    <h3>Mardi</h3>
+
+                    <label for="mardi-entree" class="form-label">Entrée :</label>
+                    <select id="mardi-entree" class="form-select mb-3 entree">
+                        <option value="">Choisir une entrée</option>
+                        <option value="5">Velouté de légumes - 5 DH</option>
+                        <option value="7">Salade marocaine - 7 DH</option>
+                        <option value="6">Soupe de légumes - 6 DH</option>
+                        <option value="5">Salade de carottes - 5 DH</option>
+                        <option value="6">Salade de tomates - 6 DH</option>
+                    </select>
+
+                    <label for="mardi-plat" class="form-label">Plat principal :</label>
+                    <select id="mardi-plat" class="form-select mb-3 plat">
+                        <option value="">Choisir un plat</option>
+                        <option value="25">Tajine de poulet - 25 DH</option>
+                        <option value="20">Couscous aux légumes - 20 DH</option>
+                        <option value="22">Riz au poulet - 22 DH</option>
+                        <option value="18">Pâtes aux légumes - 18 DH</option>
+                        <option value="28">Tajine de kefta - 28 DH</option>
+                    </select>
+
+                    <label for="mardi-dessert" class="form-label">Dessert :</label>
+                    <select id="mardi-dessert" class="form-select mb-3 dessert">
+                        <option value="">Choisir un dessert</option>
+                        <option value="5">Fruit de saison - 5 DH</option>
+                        <option value="4">Yaourt - 4 DH</option>
+                        <option value="8">Salade de fruits - 8 DH</option>
+                        <option value="7">Flan maison - 7 DH</option>
+                        <option value="6">Compote de pommes - 6 DH</option>
+                    </select>
+
+                    <p class="fw-bold">Total mardi : <span class="total-jour">0</span> DH</p>
+                    <p class="statut-budget"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-3 h-100 menu-jour" data-jour="mercredi">
+                    <h3>Mercredi</h3>
+
+                    <label for="mercredi-entree" class="form-label">Entrée :</label>
+                    <select id="mercredi-entree" class="form-select mb-3 entree">
+                        <option value="">Choisir une entrée</option>
+                        <option value="5">Velouté de légumes - 5 DH</option>
+                        <option value="7">Salade marocaine - 7 DH</option>
+                        <option value="6">Soupe de légumes - 6 DH</option>
+                        <option value="5">Salade de carottes - 5 DH</option>
+                        <option value="6">Salade de tomates - 6 DH</option>
+                    </select>
+
+                    <label for="mercredi-plat" class="form-label">Plat principal :</label>
+                    <select id="mercredi-plat" class="form-select mb-3 plat">
+                        <option value="">Choisir un plat</option>
+                        <option value="25">Tajine de poulet - 25 DH</option>
+                        <option value="20">Couscous aux légumes - 20 DH</option>
+                        <option value="22">Riz au poulet - 22 DH</option>
+                        <option value="18">Pâtes aux légumes - 18 DH</option>
+                        <option value="28">Tajine de kefta - 28 DH</option>
+                    </select>
+
+                    <label for="mercredi-dessert" class="form-label">Dessert :</label>
+                    <select id="mercredi-dessert" class="form-select mb-3 dessert">
+                        <option value="">Choisir un dessert</option>
+                        <option value="5">Fruit de saison - 5 DH</option>
+                        <option value="4">Yaourt - 4 DH</option>
+                        <option value="8">Salade de fruits - 8 DH</option>
+                        <option value="7">Flan maison - 7 DH</option>
+                        <option value="6">Compote de pommes - 6 DH</option>
+                    </select>
+
+                    <p class="fw-bold">Total mercredi : <span class="total-jour">0</span> DH</p>
+                    <p class="statut-budget"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-3 h-100 menu-jour" data-jour="jeudi">
+                    <h3>Jeudi</h3>
+
+                    <label for="jeudi-entree" class="form-label">Entrée :</label>
+                    <select id="jeudi-entree" class="form-select mb-3 entree">
+                        <option value="">Choisir une entrée</option>
+                        <option value="5">Velouté de légumes - 5 DH</option>
+                        <option value="7">Salade marocaine - 7 DH</option>
+                        <option value="6">Soupe de légumes - 6 DH</option>
+                        <option value="5">Salade de carottes - 5 DH</option>
+                        <option value="6">Salade de tomates - 6 DH</option>
+                    </select>
+
+                    <label for="jeudi-plat" class="form-label">Plat principal :</label>
+                    <select id="jeudi-plat" class="form-select mb-3 plat">
+                        <option value="">Choisir un plat</option>
+                        <option value="25">Tajine de poulet - 25 DH</option>
+                        <option value="20">Couscous aux légumes - 20 DH</option>
+                        <option value="22">Riz au poulet - 22 DH</option>
+                        <option value="18">Pâtes aux légumes - 18 DH</option>
+                        <option value="28">Tajine de kefta - 28 DH</option>
+                    </select>
+
+                    <label for="jeudi-dessert" class="form-label">Dessert :</label>
+                    <select id="jeudi-dessert" class="form-select mb-3 dessert">
+                        <option value="">Choisir un dessert</option>
+                        <option value="5">Fruit de saison - 5 DH</option>
+                        <option value="4">Yaourt - 4 DH</option>
+                        <option value="8">Salade de fruits - 8 DH</option>
+                        <option value="7">Flan maison - 7 DH</option>
+                        <option value="6">Compote de pommes - 6 DH</option>
+                    </select>
+
+                    <p class="fw-bold">Total jeudi : <span class="total-jour">0</span> DH</p>
+                    <p class="statut-budget"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card p-3 h-100 menu-jour" data-jour="vendredi">
+                    <h3>Vendredi</h3>
+
+                    <label for="vendredi-entree" class="form-label">Entrée :</label>
+                    <select id="vendredi-entree" class="form-select mb-3 entree">
+                        <option value="">Choisir une entrée</option>
+                        <option value="5">Velouté de légumes - 5 DH</option>
+                        <option value="7">Salade marocaine - 7 DH</option>
+                        <option value="6">Soupe de légumes - 6 DH</option>
+                        <option value="5">Salade de carottes - 5 DH</option>
+                        <option value="6">Salade de tomates - 6 DH</option>
+                    </select>
+
+                    <label for="vendredi-plat" class="form-label">Plat principal :</label>
+                    <select id="vendredi-plat" class="form-select mb-3 plat">
+                        <option value="">Choisir un plat</option>
+                        <option value="25">Tajine de poulet - 25 DH</option>
+                        <option value="20">Couscous aux légumes - 20 DH</option>
+                        <option value="22">Riz au poulet - 22 DH</option>
+                        <option value="18">Pâtes aux légumes - 18 DH</option>
+                        <option value="28">Tajine de kefta - 28 DH</option>
+                    </select>
+
+                    <label for="vendredi-dessert" class="form-label">Dessert :</label>
+                    <select id="vendredi-dessert" class="form-select mb-3 dessert">
+                        <option value="">Choisir un dessert</option>
+                        <option value="5">Fruit de saison - 5 DH</option>
+                        <option value="4">Yaourt - 4 DH</option>
+                        <option value="8">Salade de fruits - 8 DH</option>
+                        <option value="7">Flan maison - 7 DH</option>
+                        <option value="6">Compote de pommes - 6 DH</option>
+                    </select>
+
+                    <p class="fw-bold">Total vendredi : <span class="total-jour">0</span> DH</p>
+                    <p class="statut-budget"></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="card p-4 border-success">
+            <h2>Récapitulatif hebdomadaire</h2>
+            <p>Budget maximum par jour : 50 DH</p>
+            <p>Budget maximum par semaine : 250 DH</p>
+
+            <h3>
+                Coût total hebdomadaire par étudiant :
+                <span id="total-semaine">0</span> DH
+            </h3>
+            <p id="statut-semaine" aria-live="polite">
+                Sélectionnez vos menus pour les cinq jours.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-dark text-white text-center p-3">
+    <p class="mb-0">Cantina - YouCode 2026</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
