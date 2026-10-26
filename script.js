@@ -64,3 +64,50 @@ formulaire.addEventListener("submit", function (event) {
     modale.hidden = true;
     console.log(recettes);
 });
+const erreurNom = document.getElementById("erreur-nom");
+const erreurCategorie = document.getElementById("erreur-categorie");
+const erreurPrix = document.getElementById("erreur-prix");
+const boutonValider = document.getElementById("valider-recette");
+function verifierFormulaire() {
+    const nom = champNom.value.trim();
+    const categorie = champCategorie.value;
+    const prixTexte = champPrix.value;
+    const prix = Number(prixTexte);
+      const nomValide = /^.{3,30}$/.test(nom);
+    const categorieValide = /^(entree|plat|dessert)$/.test(categorie);
+    const prixValide = /^\d+(\.\d+)?$/.test(prixTexte)
+        && Number.isFinite(prix)
+        && prix > 0
+        && champPrix.validity.valid;
+          erreurNom.textContent = "";
+    erreurCategorie.textContent = "";
+    erreurPrix.textContent = "";
+
+    if (!nomValide) {
+        erreurNom.textContent = "Le nom doit contenir entre 3 et 30 caractères.";
+    }
+
+    if (!categorieValide) {
+        erreurCategorie.textContent = "Choisis une catégorie.";
+    }
+
+    if (!prixValide) {
+        erreurPrix.textContent = "Saisis un prix positif avec au maximum deux décimales.";
+    }
+
+    const formulaireValide = nomValide && categorieValide && prixValide;
+
+    boutonValider.disabled = !formulaireValide;
+
+    return formulaireValide;
+}
+
+formulaire.addEventListener("input", verifierFormulaire);
+formulaire.addEventListener("change", verifierFormulaire);
+
+formulaire.addEventListener("reset", function () {
+    boutonValider.disabled = true;
+    erreurNom.textContent = "";
+    erreurCategorie.textContent = "";
+    erreurPrix.textContent = "";
+});
