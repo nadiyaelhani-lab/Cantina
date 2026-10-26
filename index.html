@@ -44,25 +44,26 @@
 
                     <label for="prix-recette" class="form-label">Prix en DH</label>
                     <input type="number" id="prix-recette" class="form-control mb-3" min="0.01" step="0.01" required>
+<label for="badge-recette" class="form-label">Badge</label>
+<select id="badge-recette" class="form-select mb-3" required>
+    <option value="classique">Classique</option>
+    <option value="bio">Bio</option>
+    <option value="vegetarien">Végétarien</option>
+</select>
 
+<button type="submit" class="btn btn-success">
+    Ajouter la recette
+</button>
 
-                    <button type="submit" class="btn btn-success">
-                        <label for="badge-recette" class="form-label">Badge</label>
-                        <select id="badge-recette" class="form-select mb-3" required>
-                            <option value="classique">Classique</option>
-                            <option value="bio">Bio</option>
-                            <option value="vegetarien">Végétarien</option>
-                        </select>
-                        Ajouter la recette
-                    </button>
-                    <button type="button" id="annuler-recette" class="btn btn-secondary mt-2">
-                        Annuler
-                    </button>
+<button type="button" id="annuler-recette" class="btn btn-secondary mt-2">
+    Annuler
+</button>
+
                 </form>
             </div>
             <div class="row g-3">
                 <div class="col-md-4">
-                    <div class="card p-3 h-100">
+                    <div id="reserve-entree" class="card p-3 h-100">
                         <h3>Entrées</h3>
                         <p>Velouté de légumes <span class="badge bg-success">5 DH</span></p>
                         <p>Salade marocaine <span class="badge bg-success">7 DH</span></p>
@@ -72,9 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card p-3 h-100">
-                        <h3>Plats principaux</h3>
-                        <p>Tajine de poulet <span class="badge bg-success">25 DH</span></p>
+<div id="reserve-plat" class="card p-3 h-100">                        <p>Tajine de poulet <span class="badge bg-success">25 DH</span></p>
                         <p>Couscous aux légumes <span class="badge bg-success">20 DH</span></p>
                         <p>Riz au poulet <span class="badge bg-success">22 DH</span></p>
                         <p>Pâtes aux légumes <span class="badge bg-success">18 DH</span></p>
@@ -83,8 +82,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card p-3 h-100">
-                        <h3>Desserts</h3>
+<div id="reserve-dessert" class="card p-3 h-100">                        <h3>Desserts</h3>
                         <p>Fruit de saison <span class="badge bg-success">5 DH</span></p>
                         <p>Yaourt <span class="badge bg-success">4 DH</span></p>
                         <p>Salade de fruits <span class="badge bg-success">8 DH</span></p>
