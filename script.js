@@ -53,21 +53,38 @@ formulaire.addEventListener("submit", function (event) {
 
     const ligne = document.createElement("p");
     ligne.dataset.id = recette.id;
-    ligne.textContent = nom + " - " + prix + " DH";
-    const etiquette = document.createElement("span");
+ligne.textContent = nom + " ";
+
+const etiquettePrix = document.createElement("span");
+etiquettePrix.className = "badge bg-success";
+etiquettePrix.textContent = prix + " DH";
+
+ligne.appendChild(etiquettePrix);    const etiquette = document.createElement("span");
     etiquette.className = "badge bg-success ms-2";
     etiquette.textContent = champBadge.options[champBadge.selectedIndex].text;
 
     ligne.appendChild(etiquette);
     carteCategorie.appendChild(ligne);
+    const listes = document.querySelectorAll(".menu-jour select." + categorie);
+
+listes.forEach(function (liste) {
+    const option = document.createElement("option");
+
+    option.value = prix;
+    option.dataset.id = recette.id;
+    option.textContent = nom + " - " + prix + " DH";
+
+    liste.appendChild(option);
+});
     formulaire.reset();
     modale.hidden = true;
     console.log(recettes);
 });
 const erreurNom = document.getElementById("erreur-nom");
-const erreurCategorie = document.getElementById("erreur-categorie");
+
 const erreurPrix = document.getElementById("erreur-prix");
 const boutonValider = document.getElementById("valider-recette");
+const erreurCategorie = document.getElementById("erreur-categorie");
 function verifierFormulaire() {
     const nom = champNom.value.trim();
     const categorie = champCategorie.value;
@@ -75,10 +92,9 @@ function verifierFormulaire() {
     const prix = Number(prixTexte);
       const nomValide = /^.{3,30}$/.test(nom);
     const categorieValide = /^(entree|plat|dessert)$/.test(categorie);
-    const prixValide = /^\d+(\.\d+)?$/.test(prixTexte)
-        && Number.isFinite(prix)
-        && prix > 0
-        && champPrix.validity.valid;
+const prixValide = /^\d+(\.\d+)?$/.test(prixTexte)    && Number.isFinite(prix)
+    && prix > 0
+    && champPrix.validity.valid;
           erreurNom.textContent = "";
     erreurCategorie.textContent = "";
     erreurPrix.textContent = "";
